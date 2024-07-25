@@ -1,0 +1,19 @@
+main: eu.hardmc.skubiak.hardcurrency.HardCurrency
+author: Skubiak
+version: 1.0
+name: HardCurrency
+
+commands:
+  hardcurrency:
+    description: Command to manage player currencies
+    aliases: [currency, hc]
+permissions:
+  hardcurrency.show.*:
+    description: Allow to show player Currency
+    default: true
+  hardcurrency.currency.*:
+    description: Allows to manage currencies
+    default: op
+  hardcurrency.player.*:
+    description: Allows to manage player currencies
+    default: op

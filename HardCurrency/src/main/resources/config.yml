@@ -1,0 +1,29 @@
+database:
+  # Type of database SQLite or MySQL
+  type: SQLite
+
+  # MySQL settings only used when type is MySQL
+  mysql:
+    # MySQL database host
+    host: localhost
+    # MySQL database port (default 3306)
+    port: 3306 
+    # MySQL database database where create tables
+    database: database
+    # MySQL database username to log in
+    username: root
+    # MySQL database password to log in
+    password: ''
+    # MySQL connection settings
+    connSettings: characterEncoding=UTF-8&useSSL=false
+ 
+  # SQLite settings only used when type is SQLite
+  sqlite:
+    # Path to SQLite database file
+    path: database.db
+    
+    
+currencies:
+   # how often refresh currencies
+   # type 0 to disable! Only positive numbers
+   autoRefresh: 60
