@@ -1,2 +1,2 @@
 # HardCurrency
-Simple Minecraft Plugin to manage Unlimited Player Currencies
+Simple Minecraft Plugin to manage unlimited number of currencies
