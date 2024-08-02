@@ -40,3 +40,8 @@ buildNumber.properties
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+
+# Ignore IDE specific files
+/.project
+/.classpath
+/.settings/
