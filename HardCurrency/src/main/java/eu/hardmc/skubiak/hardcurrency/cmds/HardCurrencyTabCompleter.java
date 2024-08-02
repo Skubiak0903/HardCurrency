@@ -2,7 +2,9 @@ package eu.hardmc.skubiak.hardcurrency.cmds;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
@@ -121,6 +123,7 @@ public class HardCurrencyTabCompleter implements TabCompleter {
 	
 	private List<String> handle0Args(CommandSender sender) {
 		List<String> args = new ArrayList<>();
+		if (hasPermissionOrChild(sender, Permissions.HELP)) 			args.add("help");
 		if (hasPermissionOrChild(sender, Permissions.SHOW_CURRENCY)) 	args.add("show");
 		if (hasPermissionOrChild(sender, Permissions.CURRENCY)) 		args.add("currency");
 		if (hasPermissionOrChild(sender, Permissions.PLAYER)) 			args.add("player");
@@ -171,7 +174,11 @@ public class HardCurrencyTabCompleter implements TabCompleter {
 	    for (OfflinePlayer player : Bukkit.getOfflinePlayers()) {
 	        if (!players.contains(player.getName())) players.add(player.getName());
 	    }
-	    return players;
+        // Using HashSet to remove duplicates
+        Set<String> set = new HashSet<>(players);
+        List<String> uniquePlayers = new ArrayList<>(set);
+        
+	    return uniquePlayers;
 	}
 	
 	private List<String> getCurrenciesWithShowPermission(CommandSender sender) {

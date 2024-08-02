@@ -12,16 +12,18 @@ public class Test implements Listener {
 	private HardCurrency plugin;
 	
 	
-	// !!! Sprawdzanie poprawności wpisancyh argumentów np. czy amount (np."123a") to napewno int itp.
-	// !!! Permisje do komend dodać
-	// !! poprawić wyświetlanie pomocy
-	// !! configurowalne wiadomości
+	// !! dodać placeholders api
+	// !! zrobić nowy taki sam plugin na velocity 3.3.0-SNAPSHOT
 	// ! Opisanie całego kodu
 	
 	// Gotowe
 	
+	// !! configurowalne wiadomości
+	// !! poprawić wyświetlanie pomocy
+	// !!! Sprawdzanie poprawności wpisancyh argumentów np. czy amount (np."123a") to napewno float itp.
+	// !!! Permisje do komend dodać
 	// !!! refresh currencies after rreset
-	// !!!Automatyczne refreshe co 10 sek (zmienna z configu) aby synchronizować dane z bazy danych ( które mogły zostać zmodyfikowane gdzieś indziej)
+	// !!!Automatyczne refreshe co 60 sek (zmienna z configu) aby synchronizować dane z bazy danych ( które mogły zostać zmodyfikowane gdzieś indziej)
 	
 	
 	// Może w kolejnej wersji:
@@ -31,6 +33,7 @@ public class Test implements Listener {
 	// przy usuwaniu currency refreshowanie i gdy będzie flaga --records to aby usuwało wszystkie rekordy graczy z tą walutą. (to z flagą to opcjonalne
 	// Nowa tabla `HardCurrency_Recovery` po usunięciu będą tam wszystkie dane na temat usuniętych walut przez 24h po ich usunięciu
 	// nowa komenda do odzyskania danych (trzeba podać nazwe jeżeli było ich więcej
+	// tabela z wszystkimi graczami aby nie używać OffilnePlayer
 	
 	
 	

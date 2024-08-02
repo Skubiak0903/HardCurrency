@@ -8,6 +8,9 @@ commands:
     description: Command to manage player currencies
     aliases: [currency, hc]
 permissions:
+  hardcurrency.help:
+    description: Allow to show commands Help
+    default: true
   hardcurrency.show.*:
     description: Allow to show player Currency
     default: true

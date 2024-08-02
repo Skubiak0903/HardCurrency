@@ -6,6 +6,7 @@ public enum Permissions {
     SHOW_CURRENCY("hardcurrency.show"),
     CURRENCY("hardcurrency.currency"),
     PLAYER("hardcurrency.player"),
+    HELP("hardcurrency.help"),
     
     //show args
     SHOW_PLAYER_CURRENCY("hardcurrency.show.player"),

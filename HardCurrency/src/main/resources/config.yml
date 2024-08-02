@@ -24,6 +24,69 @@ database:
     
     
 currencies:
-   # how often refresh currencies
+   # how often refresh currencies (player currencies are always up to date)
    # type 0 to disable! Only positive numbers
    autoRefresh: 60
+   
+messages:
+    # Placeholders: %PREFIX% - prefix to use everywhere
+    prefix: "&cHard&6Currencies &8>"
+    onlyPlayer: "%PREFIX% &cOnly player can use that command!"
+    noPermission: "%PREFIX% &cYou do not have permission for this command!"
+    wrongArg: "%PREFIX% &cThere is no such argument! Use &7/hc help for help."
+    currencyNotExists: "%PREFIX% &cCurrency %CURRENCY% does not exist!"
+    noCurrenciesFound: '%PREFIX% &cNo displayable currencies found!'
+    notFloat: '%PREFIX% &cThe value "%VALUE%" is not a number!'
+    commands:
+      # Help
+      # Prefixe like [Help] for messages indicates permissions
+      # Placeholders: %cmd% - command like /hardcurreny, /hc
+      help:
+      - '&8---------------%PREFIX%&8----------------'
+      - ''
+      - '[HELP]&7/%cmd% help &8- Shows This Page'
+      - '[SHOW]&7/%cmd% show &8- Displays all your currencies'
+      - '[SHOW]&7/%cmd% show <Currency> &8- Displays specific currency'
+      - '[SHOW_PLAYER]&7/%cmd% show <Currency> <Player> &8- Displays specific currency of specific player'
+      - '[CURRENCY_ADD]&7/%cmd% currrency add <Name> &8- Adds Currency'
+      - '[CURRENCY_REMOVE]&7/%cmd% currency remove <Currency> &8- Remove specific Currency'
+      - '[CURRENCY_LIST]&7/%cmd% currency list &8- Displays all currencies'
+      - '[PLAYER_ADD]&7/%cmd% player add <Currency> <Player <Amount> &8- Adds Points to specific currency'
+      - '[PLAYER_REMOVE]&7/%cmd% player remove <Currency> <Player <Amount> &8- Remove Points to specific currency'
+      - '[PLAYER_SET]&7/%cmd% player set <Currency> <Player <Amount> &8- Set Points to specific currency'
+      - ''
+      - '&8---------------%PREFIX%&8----------------'
+    
+      # Show
+      # Placeholders:
+      # - %CURRENCY% - currency name
+      # - %AMOUNT% - amount of selected currency
+      # - %PLAYER% - 
+    
+      # for show special [CURRENCY_REPEAT] - message to repeat for all showed currencies
+      show:
+      - '%PREFIX% &8- &7Your Currencies'
+      - '[CURRENCY_REPEAT]&6%CURRENCY% &7- &a%AMOUNT%'
+      showCurrency:
+      - '%PREFIX% &8- &7Your Currency'
+      - '&6%CURRENCY% &7- &a%AMOUNT%'
+      showPlayer:
+      - '%PREFIX% &8- &7Currency of Player &8%PLAYER%&7:'
+      - '&6%CURRENCY% &7- &a%AMOUNT%'
+      wrongShowCmd: '%PREFIX% &cWrong arguments. Usage: /hc show [Currency] [Player]'
+    
+      # Currencies
+      # Placeholders: %CURRENCY% - used currency
+      currencyAdd: '%PREFIX% &aCurrency &2%CURRENCY% &ahas been added'
+      currencyRemoved: '%PREFIX% &aCurrency &2%CURRENCY% &ahas been removed'
+      currencyList:
+      - '%PREFIX% &7All Currencies'
+      - '[CURRENCY_REPEAT]&6%CURRENCY%'
+      wrongCurrencyCmd: '%PREFIX% &cWrong arguments. Usage: /hc currency <add/remove/list> [name]'
+    
+      # Player
+      playerAdd: "%PREFIX% &aAdded %ADDED_POINTS% points to &2%PLAYER%'s &a%CURRENCY% currency, now this currency has %ALL_POINTS% points"
+      playerRemove: "%PREFIX% &aRemoved %REMOVED_POINTS% points from &2%PLAYER%'s &a%CURRENCY% currency, now this currency has %ALL_POINTS% points"
+      playerSet: "%PREFIX% &2%PLAYER%'s &aplayer points in %CURRENCY% currency have been set to %SETTED_POINTS% points"
+      wrongPlayerCmd: '%PREFIX% &cWrong arguments. Usage: /hc player <add/remove/set> <Currency> <Player> <Amount>'
+    

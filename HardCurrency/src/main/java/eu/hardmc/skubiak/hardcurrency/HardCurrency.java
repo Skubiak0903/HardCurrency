@@ -39,7 +39,7 @@ public class HardCurrency extends JavaPlugin {
         this.getCommand("hardcurrency").setTabCompleter(new HardCurrencyTabCompleter(this));
         this.getCommand("hardcurrency").setAliases(Arrays.asList("currency","hc"));
 		
-		this.getServer().getPluginManager().registerEvents(new Test(this), this);
+		//this.getServer().getPluginManager().registerEvents(new Test(this), this);
 		
 		long endTime = System.nanoTime();    // End timer
 		long duration = (endTime - startTime) / 1_000_000;  // Convert to milliseconds
