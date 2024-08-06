@@ -7,8 +7,6 @@ Simple Minecraft Plugin to manage unlimited number of currencies
 - Tested Versions: 1.8.x, 1.20.1
 - Spigot 1.8-1.20.1
 - Paper 1.8-1.20.1
-#### Proxy
-- Velocity-3.3.0-SNAPSHOT
 
 ## Features
 
