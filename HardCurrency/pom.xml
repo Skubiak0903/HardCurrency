@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.skubiak</groupId>
-  <artifactId>langapi</artifactId>
-  <version>1.0</version>
-  <name>LangAPI</name>
-  <description>A simple api for managing languages in minecraft</description>
+  <groupId>eu.hardmc.skubiak</groupId>
+  <artifactId>hardcurrency</artifactId>
+  <version>1.1</version>
+  <name>HardCurrency</name>
+  <description>Simple Plugin to manage player currencies.</description>
   
   <build>
         <finalName>HardCurrency-${project.version}</finalName>
@@ -16,6 +16,10 @@
         <id>spigot-repo</id>
         <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
     </repository>
+    <repository>
+      	<id>placeholderapi</id>
+        <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
+    </repository>
   </repositories>
 
   <dependencies>
@@ -25,6 +29,12 @@
              <artifactId>spigot-api</artifactId>
              <version>1.20.1-R0.1-SNAPSHOT</version>
              <scope>provided</scope>
+      </dependency>
+	  <dependency>
+      	<groupId>me.clip</groupId>
+          <artifactId>placeholderapi</artifactId>
+          <version>2.11.6</version>
+         <scope>provided</scope>
       </dependency>
   </dependencies>
   

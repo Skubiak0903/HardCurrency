@@ -257,7 +257,7 @@ public class HardCurrencyCMD implements CommandExecutor {
 			String message = messages.get(i);
 			message = message.replaceFirst("\\[CURRENCY_REPEAT\\]", ""); 
 			message = ConfigMessages.formatString(plugin, message);
-			message = formatShowMessage(message, currency.getName(), "" + account.getPlayerCurrency(currency), player.getName());
+			message = formatShowMessage(message, currency.getName(), account.getFormatedCurrencyValue(currency), player.getName());
 			player.sendMessage(message);
 		}
 		if (i+1 >= messages.size()) return true;
@@ -286,7 +286,7 @@ public class HardCurrencyCMD implements CommandExecutor {
 		List<String> messages = ConfigMessages.SHOW_CURRENCY.getList(plugin);
 		for (String message : messages) {
 			message = ConfigMessages.formatString(plugin, message);
-			message = formatShowMessage(message, currencyName, "" + account.getPlayerCurrency(currency), player.getName());
+			message = formatShowMessage(message, currencyName, account.getFormatedCurrencyValue(currency), player.getName());
 			player.sendMessage(message);
 		}
 		return true;
@@ -308,7 +308,7 @@ public class HardCurrencyCMD implements CommandExecutor {
 		List<String> messages = ConfigMessages.SHOW_PLAYER.getList(plugin);
 		for (String message : messages) {
 			message = ConfigMessages.formatString(plugin, message);
-			message = formatShowMessage(message, currencyName, "" + account.getPlayerCurrency(currency), player.getName());
+			message = formatShowMessage(message, currencyName, account.getFormatedCurrencyValue(currency), player.getName());
 			sender.sendMessage(message);
 		}
 		return true;
@@ -437,7 +437,7 @@ public class HardCurrencyCMD implements CommandExecutor {
 		account.setPlayerCurrency(currency, amountFloat);
 		//sender.sendMessage("Nowa wartość waluty " + currencyName + " dla gracza " + playerName + " wynosi: " + amount);
 		String message = ConfigMessages.PLAYER_SET.getMessage(plugin);
-		message = formatPlayerMessage(message, "SETTED_POINTS", amount, playerName, currencyName, "" + account.getPlayerCurrency(currency));
+		message = formatPlayerMessage(message, "SETTED_POINTS", amount, playerName, currencyName, account.getFormatedCurrencyValue(currency));
 		sender.sendMessage(message);
 		return true;
 	}
@@ -467,10 +467,10 @@ public class HardCurrencyCMD implements CommandExecutor {
 		String message;
 		if (type.toUpperCase() == "REMOVE") {
 			message = ConfigMessages.PLAYER_REMOVE.getMessage(plugin);
-			message = formatPlayerMessage(message, "REMOVED_POINTS", amount, playerName, currencyName, "" + account.getPlayerCurrency(currency));
+			message = formatPlayerMessage(message, "REMOVED_POINTS", amount, playerName, currencyName, account.getFormatedCurrencyValue(currency));
 		} else {
 			message = ConfigMessages.PLAYER_ADD.getMessage(plugin);
-			message = formatPlayerMessage(message, "ADDED_POINTS", amount, playerName, currencyName, "" + account.getPlayerCurrency(currency));
+			message = formatPlayerMessage(message, "ADDED_POINTS", amount, playerName, currencyName, account.getFormatedCurrencyValue(currency));
 		}
 		sender.sendMessage(message);
 		return true;

@@ -2,9 +2,11 @@ package eu.hardmc.skubiak.hardcurrency;
 
 import java.util.Arrays;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import eu.hardmc.skubiak.hardcurrency.api.HardCurrencyAPI;
 import eu.hardmc.skubiak.hardcurrency.cmds.HardCurrencyCMD;
 import eu.hardmc.skubiak.hardcurrency.cmds.HardCurrencyTabCompleter;
 import eu.hardmc.skubiak.hardcurrency.database.Database;
@@ -12,6 +14,7 @@ import eu.hardmc.skubiak.hardcurrency.database.DatabaseInit;
 import eu.hardmc.skubiak.hardcurrency.database.queries.Query;
 import eu.hardmc.skubiak.hardcurrency.database.queries.QueryInit;
 import eu.hardmc.skubiak.hardcurrency.database.queries.QueryManager;
+import eu.hardmc.skubiak.hardcurrency.hooks.PlaceholderAPIHook;
 import eu.hardmc.skubiak.hardcurrency.managers.CurrencyManager;
 
 public class HardCurrency extends JavaPlugin {
@@ -34,6 +37,12 @@ public class HardCurrency extends JavaPlugin {
 		query = QueryInit.createQuery(db.getDatabaseType());
 		
 		cm = new CurrencyManager(this);
+		
+		HardCurrencyAPI.plugin = this;
+		
+        if (Bukkit.getPluginManager().isPluginEnabled("PlaceholderAPI")) { // 
+            PlaceholderAPIHook.registerHook(); 
+        }
 		
         this.getCommand("hardcurrency").setExecutor(new HardCurrencyCMD(this));
         this.getCommand("hardcurrency").setTabCompleter(new HardCurrencyTabCompleter(this));

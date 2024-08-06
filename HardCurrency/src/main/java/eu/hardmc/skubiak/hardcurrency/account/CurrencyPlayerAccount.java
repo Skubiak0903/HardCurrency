@@ -1,5 +1,7 @@
 package eu.hardmc.skubiak.hardcurrency.account;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Optional;
@@ -70,6 +72,24 @@ public class CurrencyPlayerAccount {
 		} catch (SQLException e) {}
 		return Optional.empty();
 	}
+	
+    //public static String getFormatedCurrencyValue(float value, int places) {
+	public String getFormatedCurrencyValue(Currency currency) {
+		float value = getPlayerCurrency(currency);
+		int places = plugin.getConfig().getInt("currencies.maxPlacesAfterDot");
+        if (places < 0) {
+            throw new IllegalArgumentException("Decimal places must be non-negative");
+        }
+
+        BigDecimal bd = new BigDecimal(Float.toString(value));
+        bd = bd.setScale(places, RoundingMode.HALF_UP);
+
+        if (places == 0) {
+            return bd.toPlainString().split("\\.")[0];
+        } else {
+            return bd.stripTrailingZeros().toPlainString();
+        }
+    }
 	
 	
 	private void insertPlayerCurrency(Currency currency, float amount) {

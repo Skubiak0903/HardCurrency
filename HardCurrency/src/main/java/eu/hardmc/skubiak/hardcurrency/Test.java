@@ -11,24 +11,24 @@ import eu.hardmc.skubiak.hardcurrency.account.CurrencyPlayerAccount;
 public class Test implements Listener {
 	private HardCurrency plugin;
 	
-	
-	// !! dodać placeholders api
 	// !! zrobić nowy taki sam plugin na velocity 3.3.0-SNAPSHOT
 	// ! Opisanie całego kodu
 	
 	// Gotowe
 	
+	// !! dodać placeholders api
 	// !! configurowalne wiadomości
 	// !! poprawić wyświetlanie pomocy
 	// !!! Sprawdzanie poprawności wpisancyh argumentów np. czy amount (np."123a") to napewno float itp.
 	// !!! Permisje do komend dodać
+	// api
 	// !!! refresh currencies after rreset
 	// !!!Automatyczne refreshe co 60 sek (zmienna z configu) aby synchronizować dane z bazy danych ( które mogły zostać zmodyfikowane gdzieś indziej)
 	
 	
 	// Może w kolejnej wersji:
 	
-	// api
+	// Cooldown na sprawdzanie waluty gracza
 	// coś w stylu jak jest w currency aby zapisywać w liście wszystkie waluty gracza itp
 	// przy usuwaniu currency refreshowanie i gdy będzie flaga --records to aby usuwało wszystkie rekordy graczy z tą walutą. (to z flagą to opcjonalne
 	// Nowa tabla `HardCurrency_Recovery` po usunięciu będą tam wszystkie dane na temat usuniętych walut przez 24h po ich usunięciu
@@ -67,7 +67,6 @@ public class Test implements Listener {
 		plugin.getLogger().info("3. usd - player currency: " + playerAccount.getPlayerCurrency(usd));
 		playerAccount.setPlayerCurrency(usd, 50);
 		plugin.getLogger().info("4. usd - player currency: " + playerAccount.getPlayerCurrency(usd));
-		
 	}
 
 }

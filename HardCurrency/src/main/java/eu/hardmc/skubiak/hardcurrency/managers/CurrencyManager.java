@@ -79,6 +79,10 @@ public class CurrencyManager {
 		refreshCurrencies();
 	}
 	
+	public void removeCurrency(Currency currency) {
+		removeCurrency(currency.getId());
+	}
+	
 	public List<String> getAllCurrencies() {
 		List<String> currenciesList = new ArrayList<String>();
         for (Entry<Integer, String> entry : currencies.entrySet()) {

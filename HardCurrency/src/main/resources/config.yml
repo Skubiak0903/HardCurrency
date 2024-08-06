@@ -24,9 +24,12 @@ database:
     
     
 currencies:
-   # how often refresh currencies (player currencies are always up to date)
+   # how often refresh currencies in seconds (player currencies are always up to date)
    # type 0 to disable! Only positive numbers
    autoRefresh: 60
+   # How many decimal places should be visible?
+   # -1 to disable
+   maxPlacesAfterDot: 2
    
 messages:
     # Placeholders: %PREFIX% - prefix to use everywhere
@@ -42,7 +45,7 @@ messages:
       # Prefixe like [Help] for messages indicates permissions
       # Placeholders: %cmd% - command like /hardcurreny, /hc
       help:
-      - '&8---------------%PREFIX%&8----------------'
+      - '&8---------------< %PREFIX%&8----------------'
       - ''
       - '[HELP]&7/%cmd% help &8- Shows This Page'
       - '[SHOW]&7/%cmd% show &8- Displays all your currencies'
@@ -55,7 +58,7 @@ messages:
       - '[PLAYER_REMOVE]&7/%cmd% player remove <Currency> <Player <Amount> &8- Remove Points to specific currency'
       - '[PLAYER_SET]&7/%cmd% player set <Currency> <Player <Amount> &8- Set Points to specific currency'
       - ''
-      - '&8---------------%PREFIX%&8----------------'
+      - '&8---------------< %PREFIX%&8----------------'
     
       # Show
       # Placeholders:
